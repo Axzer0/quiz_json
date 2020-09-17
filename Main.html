@@ -10,13 +10,13 @@
 <h1>Quiz</h1>
 <br>
 <hr>
-<div class="q_Stack"  style="display: block" id="p1">
+<div class="q_Stack" style="display: block" id="p1">
     <div>
         <h3>Pick Type</h3><hr>
         <br>
         <div>
             <span>Panels Will Change After timeout:&nbsp;</span>
-            <button class="btn1" >Timed</button>
+            <button class="btn1" onclick="onTimer()">Timed</button>
         </div>
         <div>
             <span>Panels will not change after time:&nbsp;&nbsp;</span>
@@ -25,8 +25,8 @@
     </div>
 </div>
 <div class="q_Stack" id="p2">
-    <div id="question"><h3>e</h3></div><br><hr>
-    <div id="no_timer3">
+    <div id="question">e</div><br><hr>
+        <div id="no_timer">
         <div>
             <button class="btn1" id="b1" onclick="Option_btn_Click('a')">a</button>
             <button class="btn2" id="b2" onclick="Option_btn_Click('b')">b</button>
@@ -35,7 +35,17 @@
             <button class="btn1" id="b3" onclick="Option_btn_Click('c')">d</button>
             <button class="btn2" id="b4" onclick="Option_btn_Click('d')">e</button>
         </div>
-    </div>
+        </div>
+        <div id="timer">
+            <div>
+                <button class="btn1" id="b5" onclick="onClick2('a')">a</button>
+                <button class="btn2" id="b6" onclick="onClick2('b')">b</button>
+            </div>
+            <div>
+                <button class="btn1" id="b7" onclick="onClick2('c')">d</button>
+                <button class="btn2" id="b8" onclick="onClick2('d')">e</button>
+            </div>
+        </div>
 </div>
 <div class="resultPanel" id="p3">
     <h3>Results</h3>
@@ -47,6 +57,10 @@
     <div id="res">Results : 0</div>
     <hr>
     <button class="btn1" onclick="restart()">Restart?</button>
+</div>
+
+<div class="time" id="rem">
+    Time Remaining: 10
 </div>
 </body>
 </html>
