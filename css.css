@@ -1,0 +1,24 @@
+.q_Stack{
+    display: none;
+    width: 400px;
+    height: 200px;
+    background-color: yellow;
+    padding: 25px;
+}
+.btn1,.btn2{
+    padding: 5px;
+    font-family: "Courier New", monospace ;
+    margin-bottom: 15px;
+    width: 150px;
+}
+.btn2{
+    margin-left: 50px;
+}
+
+.resultPanel{
+    display: none;
+    padding: 25px;
+    background-color: beige;
+    width: 280px;
+    font-family: "Courier New", monospace;
+}

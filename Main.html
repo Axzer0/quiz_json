@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<h1>Quiz</h1>
+<br>
+<hr>
+<div class="q_Stack"  style="display: block" id="p1">
+    <div>
+        <h3>Pick Type</h3><hr>
+        <br>
+        <div>
+            <span>Panels Will Change After timeout:&nbsp;</span>
+            <button class="btn1" >Timed</button>
+        </div>
+        <div>
+            <span>Panels will not change after time:&nbsp;&nbsp;</span>
+            <button class="btn1" onclick="onStart()">Not Timed</button>
+        </div>
+    </div>
+</div>
+<div class="q_Stack" id="p2">
+    <div id="question"><h3>e</h3></div><br><hr>
+    <div id="no_timer3">
+        <div>
+            <button class="btn1" id="b1" onclick="Option_btn_Click('a')">a</button>
+            <button class="btn2" id="b2" onclick="Option_btn_Click('b')">b</button>
+        </div>
+        <div>
+            <button class="btn1" id="b3" onclick="Option_btn_Click('c')">d</button>
+            <button class="btn2" id="b4" onclick="Option_btn_Click('d')">e</button>
+        </div>
+    </div>
+</div>
+<div class="resultPanel" id="p3">
+    <h3>Results</h3>
+    <hr>
+    <div id="ans1">Q1 Selected Option: n/a, incorrect: 0 [Correct Ans: a]</div><br>
+    <div id="ans2">Q2 Selected Option: n/a, incorrect: 0 [Correct Ans: a]</div><br>
+    <div id="ans3">Q3 Selected Option: n/a, incorrect: 0 [Correct Ans: a]</div><br>
+    <div id="ans4">Q4 Selected Option: n/a, incorrect: 0 [Correct Ans: a]</div><br>
+    <div id="res">Results : 0</div>
+    <hr>
+    <button class="btn1" onclick="restart()">Restart?</button>
+</div>
+</body>
+</html>
