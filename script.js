@@ -1,36 +1,44 @@
 //for data source
 const question = {"question":[
         {
-            "Question":"Question 1: Choose a option",
-            "Oa":"Option Aaa",
-            "Ob":"Option Bbb",
-            "Oc":"Option Ccc",
-            "Od":"Option Ddd",
-            "ans":"a"
+            "Question":"Question 1: Name the smallest country in the world",
+            "Oa":"Russia",
+            "Ob":"Sudan",
+            "Oc":"Vatican",
+            "Od":"Spain",
+            "ans":"c"
         },
         {
-            "Question":"Question 2: Choose a option",
-            "Oa":"Option AAA",
-            "Ob":"Option BBB",
-            "Oc":"Option CCC",
-            "Od":"Option DDD",
+            "Question":"Question 2: Name the longest river in the world",
+            "Oa":"Amazon",
+            "Ob":"Nile",
+            "Oc":"Volga",
+            "Od":"Koshi",
             "ans":"b"
         },
         {
-            "Question":"Question 3: Choose a option",
-            "Oa":"Option ABC",
-            "Ob":"Option BCD",
-            "Oc":"Option CDE",
-            "Od":"Option DEF",
+            "Question":"Question 3: Name Henry VIII's last wife",
+            "Oa":"Elizabeth II",
+            "Ob":"Haya Bint",
+            "Oc":"Endgitu",
+            "Od":"Catherine Peirr",
             "ans":"d"
         },
         {
-            "Question":"Question 4: Choose a option",
-            "Oa":"Option AZY",
-            "Ob":"Option BAZ",
-            "Oc":"Option CBA",
-            "Od":"Option DCB",
-            "ans":"c"
+            "Question":"Question 4: Name the first female president of Australia",
+            "Oa":"Golda Meir",
+            "Ob":"Domitic Bella",
+            "Oc":"Elizabeth Doe",
+            "Od":"Julia Gillford",
+            "ans":"d"
+        },
+        {
+            "Question":"Question 5: Name the disease for which the first vaccine was created",
+            "Oa":"Measles",
+            "Ob":"SmallPox",
+            "Oc":"Mumps",
+            "Od":"Rubello",
+            "ans":"b"
         }
     ]};
 
@@ -43,19 +51,15 @@ let result=0;
 //for each button click
 function Option_btn_Click(val) {
 
-    if(i<3){i++;}
-    else{
-        document.getElementById('p3').style.display="block";
-        document.getElementById('p2').style.display="none";
-        i=0;
-    }
+
     let id;
     let qNum;
     switch (i) {
-        case 1: id = "ans1";qNum=1;break;
-        case 2: id = "ans2";qNum=2;break;
-        case 3: id ="ans3";qNum=3;break;
-        case 0: id ="ans4";qNum=4;break;
+        case 0: id = "ans1";qNum=1;break;
+        case 1: id = "ans2";qNum=2;break;
+        case 2: id ="ans3";qNum=3;break;
+        case 3: id ="ans4";qNum=4;break;
+        case 4: id ="ans5";qNum=5;break;
     }
 
     //setting results
@@ -65,6 +69,12 @@ function Option_btn_Click(val) {
     }
     else{
         document.getElementById(id).innerText= "Q"+qNum+" Selected Option: " + val + ", incorrect: 0 [Correct Ans:"+question.question[i].ans+ "]";
+    }
+    if(i<4){i++;}
+    else{
+        document.getElementById('p3').style.display="block";
+        document.getElementById('p2').style.display="none";
+        i=0;
     }
     setUp();
     document.getElementById('res').innerText = "Results : "+result;
@@ -105,6 +115,17 @@ function restart() {
     document.getElementById('timer').style.display="none";
     document.getElementById('no_timer').style.display="none";
     document.getElementById('rem').style.display="none";
+    document.getElementById('ans1').innerText= "Q1 Selected Option: n/a, incorrect: 0 [Correct Ans: "+ question.question[0].ans +"]";
+    document.getElementById('ans2').innerText= "Q2 Selected Option: n/a, incorrect: 0 [Correct Ans: "+ question.question[1].ans +"]";
+    document.getElementById('ans3').innerText= "Q3 Selected Option: n/a, incorrect: 0 [Correct Ans: "+ question.question[2].ans +"]";
+    document.getElementById('ans4').innerText= "Q4 Selected Option: n/a, incorrect: 0 [Correct Ans: "+ question.question[3].ans +"]";
+    document.getElementById('ans5').innerText= "Q5 Selected Option: n/a, incorrect: 0 [Correct Ans: "+ question.question[4].ans +"]";
+
+
+
+
+
+
 
 
 }
@@ -115,7 +136,6 @@ function onTimer() {
     document.getElementById('p2').style.display="block";
     document.getElementById('timer').style.display="block";
     document.getElementById('rem').style.display="block";
-
     cP();
 }
 
@@ -124,12 +144,11 @@ function cP() {
     startTimer()
     setUp();
     this.int= setInterval(()=>{
-        if(i<3){i++;}
+        if(i<4){i++;}
         else{
             document.getElementById('p3').style.display="block";
             document.getElementById('p2').style.display="none";
             document.getElementById('rem').style.display="none";
-
             i=0;
             clearInterval(this.int);
             stopTimer();
@@ -141,35 +160,28 @@ function cP() {
 function onClick2(val) {
     stopTimer();
     clearInterval(this.int);
-    if(i<3){i++;}
-    else{
-        document.getElementById('p3').style.display="block";
-        document.getElementById('p2').style.display="none";
-        document.getElementById('rem').style.display="none";
-
-        i=0;
-        clearInterval(this.int);
-        stopTimer();
-    };
-
     let id;
     let qNum;
     switch (i) {
-        case 1:
+        case 0:
             id = "ans1";
             qNum = 1;
             break;
-        case 2:
+        case 1:
             id = "ans2";
             qNum = 2;
             break;
-        case 3:
+        case 2:
             id = "ans3";
             qNum = 3;
             break;
-        case 0:
+        case 3:
             id = "ans4";
             qNum = 4;
+            break;
+        case 4:
+            id = "ans5";
+            qNum = 5;
             break;
     }
 
@@ -180,6 +192,16 @@ function onClick2(val) {
     else{
         document.getElementById(id).innerText= "Q"+qNum+" Selected Option: " + val + ", incorrect: 0 [Correct Ans:"+question.question[i].ans+ "]";
     }
+    if(i<4){i++;}
+    else{
+        document.getElementById('p3').style.display="block";
+        document.getElementById('p2').style.display="none";
+        document.getElementById('rem').style.display="none";
+
+        i=0;
+        clearInterval(this.int);
+        stopTimer();
+    };
     cP();
     document.getElementById('res').innerText = "Results : "+result;
 }
